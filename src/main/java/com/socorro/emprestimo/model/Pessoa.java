@@ -2,7 +2,6 @@ package com.socorro.emprestimo.model;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.List;
 

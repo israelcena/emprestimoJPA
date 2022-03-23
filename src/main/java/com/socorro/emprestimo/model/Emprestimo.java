@@ -6,7 +6,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.UUID;
 
 @Getter @Setter @Entity
 public class Emprestimo {
@@ -20,6 +19,9 @@ public class Emprestimo {
   @OneToMany(mappedBy = "emprestimo", cascade = CascadeType.ALL)
   private List<Parcela> parcelas;
 
-  @ManyToMany @JoinTable(name = "pessoa_emprestimo", joinColumns = { @JoinColumn(name = "id_emprestimo")}, inverseJoinColumns = {@JoinColumn(name = "id_pessoa")})
+  @ManyToMany @JoinTable(
+      name = "pessoa_emprestimo",
+      joinColumns = { @JoinColumn(name = "id_emprestimo")},
+      inverseJoinColumns = {@JoinColumn(name = "id_pessoa")})
   private List<Pessoa> pessoas;
 }
