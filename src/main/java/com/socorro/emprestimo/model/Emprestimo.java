@@ -11,7 +11,7 @@ import java.util.UUID;
 @Getter @Setter @Entity
 public class Emprestimo {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private UUID id;
+  private Integer id;
   private Float valor;
   private Integer num_parcelas;
   private Timestamp data_emprestimo;

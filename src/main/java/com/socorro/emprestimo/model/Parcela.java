@@ -9,7 +9,7 @@ import java.util.UUID;
 @Getter @Setter @Entity
 public class Parcela {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private UUID id;
+  private Integer id;
   private Float valor;
   private Integer num;
   private String status;

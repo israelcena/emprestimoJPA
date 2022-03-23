@@ -5,12 +5,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.UUID;
 
 @Getter @Setter @Entity(name = "pessoa")
 public class Pessoa {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private UUID id;
+  private Integer id;
   private String nome;
   private String cpf;
   private Float salario;
