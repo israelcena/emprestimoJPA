@@ -1,19 +1,19 @@
 package com.socorro.emprestimo.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter @Setter @Entity
+@Getter @Setter @Entity @Builder @AllArgsConstructor
+@RequiredArgsConstructor
 public class Emprestimo {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private Float valor;
   private Integer num_parcelas;
-  private Timestamp data_emprestimo;
+  private LocalDateTime data_emprestimo;
   private String status;
 
   @OneToMany(mappedBy = "emprestimo", cascade = CascadeType.ALL)

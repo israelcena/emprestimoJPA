@@ -1,11 +1,11 @@
 package com.socorro.emprestimo.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.List;
 
-@Getter @Setter @Entity(name = "pessoa")
+@Getter @Setter @Entity(name = "pessoa") @Builder @RequiredArgsConstructor @AllArgsConstructor
 public class Pessoa {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;

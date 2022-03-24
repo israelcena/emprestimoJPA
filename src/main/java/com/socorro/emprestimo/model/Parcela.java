@@ -1,11 +1,12 @@
 package com.socorro.emprestimo.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter @Setter @Entity
+@Getter @Setter @Entity @Builder @AllArgsConstructor
+@RequiredArgsConstructor
 public class Parcela {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
