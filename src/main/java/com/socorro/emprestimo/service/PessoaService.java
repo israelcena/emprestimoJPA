@@ -5,16 +5,18 @@ import com.socorro.emprestimo.repository.PessoaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service @RequiredArgsConstructor
 public class PessoaService {
 
   private final PessoaRepository pessoaRepository;
 
-  public void findAll(){
-    List<Pessoa> pessoaList = pessoaRepository.findAll();
-    pessoaList.forEach(pessoa -> System.out.println(pessoa.getNome()));
+  public List<Pessoa> findAll(){
+    List<Pessoa> pessoas = pessoaRepository.findAll();
+    return pessoas;
   }
 
   public void createPessoa(Pessoa pessoa){
