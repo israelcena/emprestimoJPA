@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-@Getter @Setter @Entity(name = "pessoa") @Builder @RequiredArgsConstructor @AllArgsConstructor
+@Getter @Setter @Entity @Builder @RequiredArgsConstructor @AllArgsConstructor
 public class Pessoa {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
@@ -14,6 +14,7 @@ public class Pessoa {
   private Float salario;
   private String endereco;
 
-  @ManyToMany(mappedBy = "pessoas", fetch =FetchType.EAGER)
+  @ManyToMany(mappedBy = "pessoas", fetch=FetchType.EAGER)
   private List<Emprestimo> emprestimos;
+
 }
