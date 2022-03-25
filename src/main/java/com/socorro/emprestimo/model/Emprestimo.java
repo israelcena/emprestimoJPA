@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter @Entity @Builder @AllArgsConstructor
@@ -23,5 +24,5 @@ public class Emprestimo {
       name = "pessoa_emprestimo",
       joinColumns = { @JoinColumn(name = "id_emprestimo")},
       inverseJoinColumns = {@JoinColumn(name = "id_pessoa")})
-  private List<Pessoa> pessoas;
+  private List<Pessoa> pessoas = new ArrayList<>();
 }
