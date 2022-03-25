@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-@Getter @Setter @Entity @Builder @RequiredArgsConstructor @AllArgsConstructor
+@Getter @Setter @Entity(name = "pessoa") @Builder @RequiredArgsConstructor @AllArgsConstructor
 public class Pessoa {
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
