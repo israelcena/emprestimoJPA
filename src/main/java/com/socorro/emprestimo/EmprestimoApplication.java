@@ -1,13 +1,12 @@
 package com.socorro.emprestimo;
 
 import com.socorro.emprestimo.model.Pessoa;
-import com.socorro.emprestimo.repository.PessoaRepository;
+import com.socorro.emprestimo.service.EmprestimoService;
+import com.socorro.emprestimo.service.PessoaService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.util.List;
 
 @SpringBootApplication
 public class EmprestimoApplication {
@@ -17,10 +16,9 @@ public class EmprestimoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(PessoaRepository pessoaRepository) {
+	public CommandLineRunner demo() {
 		return (args) -> {
-			List<Pessoa> pessoas = pessoaRepository.findAll();
-			pessoas.forEach(p -> System.out.println(p.getNome()));
+			System.out.println("Sistema Iniciado Com Sucesso");
 		};
 	}
 
